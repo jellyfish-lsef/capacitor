@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Capacitor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <!-- without specifying charset monaco goes Â-->
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="assets/font/icon.css">
+        <link rel="stylesheet" href="index.css">
+        <script src="./monaco-editor/min/vs/loader.js"></script>
+    </head>
+    <body>
+        <div id="mainsidebar">
+            <a href="#about" alt="Jellyfish Options" id="aboutBtn">
+                <img src="assets/img/me@2x.png" width="50" height="50"></img>
+            </a>
+            <a href="#editor" alt="Code Editor" class="material-icons selected iconButton" id="editorBtn">
+                code
+            </a>
+            <a href="javascript:openSidebar('files')" alt="My Scripts" class="material-icons iconButton" id="filesBtn">
+                description
+            </a>
+            <a href="javascript:openSidebar('tool')" alt="Script Hub & Tools" class="material-icons iconButton" id="toolBtn">
+                handyman
+            </a>
+
+            <a href="javascript:run()" alt="Run Script" class="material-icons iconButton" id="runBtn">
+                play_arrow
+            </a>
+            <a href="javascript:jellyfish.inject()" alt="Inject" class="material-icons iconButton" id="injectBtn">
+                memory
+            </a>
+        </div>
+        <div id="contentContainer">
+            <div class="content" id="aboutPage">
+                // TODO: make this page less shit
+                <h2>Switch Theme</h2>
+                <a href="javascript:jellyfish.setTheme('jellyfish-lsef/jellyfish-ui')">Restore default theme</a><br>
+                <h2>Switch Exploit</h2>
+                
+            </div>
+            <div class="content" id="scriptingPage">
+                <div id="editorSidebarContainer">
+                    <div class="editorSidebar" id="scriptsSidebar">
+                        <div class="sidebarHeader">
+                            <b>Scripts</b>
+                            <a href="javascript:saveCurrentScript()" class="glowy material-icons" id="saveScript">save</a>
+                        </div>
+                    
+                        
+
+                    </div>
+                    <div class="editorSidebar" id="toolsSidebar">
+                        <div class="sidebarHeader">
+                            <b>Tools</b>
+                        </div>
+                        <div class="slider" id="speedSlider">
+                            <div class="sliderHeader">
+                                <div class="sliderHeaderText">Walk Speed</div>
+                                <div class="sliderHeaderReset"><button class="simpleButton material-icons" onclick="pn =this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`);pn.value = 16;pn.onchange()">settings_backup_restore</button></div>
+                            </div>
+                            <input type="range" class="fullwidth" min="0" onchange="jellyfish.runScript('game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = ' + this.value)" max="160" value="16"/>
+                        </div>
+                        <div class="slider" id="jumpSlider">
+                            <div class="sliderHeader">
+                                <div class="sliderHeaderText">Jump Height</div>
+                                <div class="sliderHeaderReset"><button class="simpleButton material-icons" onclick="this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).value = 50;this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).onchange()">settings_backup_restore</button></div>
+                            </div>
+                            <input type="range" class="fullwidth" min="0" onchange="jellyfish.runScript('game.Players.LocalPlayer.Character.Humanoid.JumpPower = ' + this.value)" max="500" value="50"/>
+                        </div>
+                        <div class="slider" id="hipSlider">
+                            <div class="sliderHeader">
+                                <div class="sliderHeaderText">Levitation</div>
+                                <div class="sliderHeaderReset"><button class="simpleButton material-icons" onclick="this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).value = 2.362;this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).onchange()">settings_backup_restore</button></div>
+                            </div>
+                            <input type="range" class="fullwidth" onchange="jellyfish.runScript('game.Players.LocalPlayer.Character.Humanoid.HipHeight = ' + this.value)" max="52.362" value="2.362" min="2.362"/>
+                        </div>
+                        <div class="slider" id="gravitySlider">
+                            <div class="sliderHeader">
+                                <div class="sliderHeaderText">Local Gravity</div>
+                                <div class="sliderHeaderReset"><button class="simpleButton material-icons" onclick="this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).value = 196.2;this.parentNode.parentNode.parentNode.querySelector(`input[type='range']`).onchange()">settings_backup_restore</button></div>
+                            </div>
+                            <input type="range" class="fullwidth" onchange="jellyfish.runScript('game.Workspace.Gravity = ' + this.value)" max="500" value="196.2" min="0"/>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div id="monacoContainer"></div>
+            </div>
+        </div>
+        <div id="tooltip">Jellyfish</div>
+        <!--<div id="moveBar"></div>-->
+        <script src="client.js"></script>
+    </body>
+</html>

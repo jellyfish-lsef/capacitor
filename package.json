@@ -1,0 +1,21 @@
+{
+    "name": "capacitor",
+    "description": "An alternative theme for Jellyfish",
+    "author": "theLMGN",
+    "version": "1.0.0",
+    "main": "index.html",
+    "keywords": [ "jellyfish-ui" ],
+    "devDependencies": {},
+  
+    "license": "SEE LICENCE IN LICENCE",
+    
+    "homepage": "https://github.com/Jellyfish-lsef/capacitor#readme",
+    "bugs": {
+      "url": "https://github.com/Jellyfish-lsef/capacitor/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Jellyfish-lsef/capacitor.git"
+    }
+  }
+  
