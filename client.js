@@ -108,6 +108,6 @@ jellyfish.init()
 
 function gotSupportedExploits(exploits) {
     for (var exploit of exploits) {
-        $("#aboutPage").innerHTML += `<a href="javascript:jellyfish.setExploit("${exploit}")>${jellyfish.exploits[exploit] || exploit}</a><br>`
+        $("#aboutPage").innerHTML += `<a href="javascript:jellyfish.setExploit('${exploit}')>${jellyfish.exploits[exploit] || exploit}</a><br>`
     }
 }
